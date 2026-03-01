@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Nimblemancer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Nimblemancer</a>
+        <div class="navbar-links">
+            <a href="creator.html" class="nav-link">Creator</a>
+            <a href="gallery.html" class="nav-link active">Gallery</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Hall of Heroes</h1>
+        
+        <div id="gallery-empty" class="empty-state" style="display: none;">
+            <h3>The Hall of Heroes is Empty</h3>
+            <div class="menu-group" style="width: 100%; max-width: 400px; margin: 0 auto;">
+                <a href="creator.html" class="btn">Forge a New Hero</a>
+                <button id="btn-import-hero" class="btn">Import from Archives</button>
+            </div>
+
+            <!-- Hidden input for file loading -->
+            <input type="file" id="file-input-json" accept=".json" multiple style="display: none;" />
+        </div>
+
+        <div id="drag-overlay">Drop Heroes Here</div>
+
+        <div id="gallery-list">
+            <!-- Hero cards will go here -->
+        </div>
+    </main>
+
+    <script type="module" src="js/gallery.js"></script>
+</body>
+</html>

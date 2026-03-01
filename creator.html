@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Nimblemancer</a>
+        <div class="navbar-links">
+            <a href="creator.html" class="nav-link active">Creator</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <input type="text" id="character-name" class="character-name-input" placeholder="Character Name" />
+        
+        <div class="tabs-container">
+            <button class="tab active" data-tab="ancestry">Ancestry</button>
+            <button class="tab" data-tab="class">Class</button>
+            <button class="tab" data-tab="background">Background</button>
+            <button class="tab" data-tab="stats">Stats</button>
+            <button class="tab" data-tab="skills">Skills</button>
+            <button class="tab" data-tab="equipment">Equipment</button>
+        </div>
+
+        <div class="creator-content">
+            <div id="tab-ancestry" class="tab-panel active">
+                <div id="ancestry-list" class="selection-grid">
+                    <!-- Ancestry cards will be loaded here -->
+                </div>
+            </div>
+
+            <div id="tab-class" class="tab-panel">
+                <h2>Choose Your Class</h2>
+                <p>Select your character's class...</p>
+            </div>
+
+            <div id="tab-background" class="tab-panel">
+                <h2>Choose Your Background</h2>
+                <p>Select your character's background...</p>
+            </div>
+
+            <div id="tab-stats" class="tab-panel">
+                <h2>Assign Stats</h2>
+                
+                <!-- Stat Spread Selection -->
+                <div class="stat-spread-section">
+                    <h3>Choose Stat Spread</h3>
+                    <div class="stat-spread-options">
+                        <label class="stat-spread-option">
+                            <input type="radio" name="stat-spread" value="standard" checked>
+                            <span class="spread-label">
+                                <strong>Standard</strong>
+                                <span class="spread-values">+2, +2, +0, –1</span>
+                            </span>
+                        </label>
+                        <label class="stat-spread-option">
+                            <input type="radio" name="stat-spread" value="balanced">
+                            <span class="spread-label">
+                                <strong>Balanced</strong>
+                                <span class="spread-values">+2, +1, +1, +0</span>
+                            </span>
+                        </label>
+                        <label class="stat-spread-option">
+                            <input type="radio" name="stat-spread" value="minmax">
+                            <span class="spread-label">
+                                <strong>Min-Max</strong>
+                                <span class="spread-values">+3, +1, –1, –1</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Stat Assignment -->
+                <div class="stat-assignment-section">
+                    <h3>Assign to Stats</h3>
+                    <div class="stat-grid">
+                        <div class="stat-box" data-stat="str">
+                            <div class="stat-indicators">
+                                <span class="stat-key" title="Key Stat">★</span>
+                                <span class="stat-advantage" title="Advantaged">●</span>
+                                <span class="stat-disadvantage" title="Disadvantaged">●</span>
+                            </div>
+                            <label>STR</label>
+                            <div class="stat-dropzone" data-stat="str">
+                                <span class="stat-value">Drop here</span>
+                            </div>
+                        </div>
+                        <div class="stat-box" data-stat="dex">
+                            <div class="stat-indicators">
+                                <span class="stat-key" title="Key Stat">★</span>
+                                <span class="stat-advantage" title="Advantaged">●</span>
+                                <span class="stat-disadvantage" title="Disadvantaged">●</span>
+                            </div>
+                            <label>DEX</label>
+                            <div class="stat-dropzone" data-stat="dex">
+                                <span class="stat-value">Drop here</span>
+                            </div>
+                        </div>
+                        <div class="stat-box" data-stat="int">
+                            <div class="stat-indicators">
+                                <span class="stat-key" title="Key Stat">★</span>
+                                <span class="stat-advantage" title="Advantaged">●</span>
+                                <span class="stat-disadvantage" title="Disadvantaged">●</span>
+                            </div>
+                            <label>INT</label>
+                            <div class="stat-dropzone" data-stat="int">
+                                <span class="stat-value">Drop here</span>
+                            </div>
+                        </div>
+                        <div class="stat-box" data-stat="will">
+                            <div class="stat-indicators">
+                                <span class="stat-key" title="Key Stat">★</span>
+                                <span class="stat-advantage" title="Advantaged">●</span>
+                                <span class="stat-disadvantage" title="Disadvantaged">●</span>
+                            </div>
+                            <label>WILL</label>
+                            <div class="stat-dropzone" data-stat="will">
+                                <span class="stat-value">Drop here</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Pool -->
+                <div class="stat-pool-section">
+                    <div class="stat-pool" id="stat-pool">
+                        <!-- Draggable stat values will be populated here by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-skills" class="tab-panel">
+                <h2>Choose Skills</h2>
+                <p>Select your character's skills...</p>
+            </div>
+
+            <div id="tab-equipment" class="tab-panel">
+                <h2>Select Equipment</h2>
+                <p>Choose your starting equipment...</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/creator.js"></script>
+</body>
+</html>
